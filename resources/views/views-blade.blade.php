@@ -3,9 +3,10 @@
 @section('title', 'Home')
 @push('style')
     <style>
-        li{
+        li {
             color: red;
         }
+
     </style>
 @endpush
 
@@ -14,19 +15,17 @@
 
 
     <div>
-        <h1>Welcome To Contact Us Page</h1>
+        <h1>Welcome To Views Blade Page</h1>
 
         <hr>
         <h3> forelse Loop</h3>
 
         @forelse ($teams as $team)
-
-
             @if ($loop->first)
                 This is the first iteration.
             @endif
 
-            <li>{{ $loop->index }} {{  $team }}</li>
+            <li>{{ $loop->index }} {{ $team }}</li>
 
             @if ($loop->last)
                 This is the last iteration.

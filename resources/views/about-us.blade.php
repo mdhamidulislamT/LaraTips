@@ -7,7 +7,7 @@
 
 
     <div>
-        <h1>Welcome To About Us Page</h1>
+        <h1>Welcome To  Middleware , Group middleware & Component</h1>
     </div>
 
     <x-alert type="alert-success" />
