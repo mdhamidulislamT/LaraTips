@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\CollectionController;
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RelationshipController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\TestController;
 
 //=== 15.04.2022 ===/
 
@@ -51,14 +53,34 @@ Route::name('admin.')->group(function () {
 });
 
 
-//======= Model =======//
+Route::resource('test', TestController::class)->names([
+    'index' => 'test.index',
+    'store' => 'test.store',
+    'show' => 'test.show',
+]);
 
-Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
-Route::get('/blogs', [HomeController::class, 'getBlog'])->name('blogs');
-Route::get('/product', [HomeController::class, 'product'])->name('product');
-Route::get('/product-delete', [HomeController::class, 'productDelete'])->name('product-delete');
+
+
+//======= Model =======//
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/blog',  'blog')->name('blog');
+    Route::get('/blogs',  'getBlog')->name('blogs');
+    Route::get('/product',  'product')->name('product');
+    Route::get('/product-delete',  'productDelete')->name('product.delete');
+});
 
 
 //======= Collection =======//
-
 Route::get('/collection', [CollectionController::class, 'index'])->name('collection');
+//======= Collection =======//
+Route::get('/signupForm', [SignupController::class, 'signupForm'])->name('signup.form');
+Route::post('signup', [SignupController::class, 'signup'])->name('signup');
+
+
+
+
+Route::get('/test', [HomeController::class, 'test']);
+Route::get('/testt', [HomeController::class, 'testt']);
+
+//======= relationships =======//
+Route::get('/check', [RelationshipController::class, 'index']);

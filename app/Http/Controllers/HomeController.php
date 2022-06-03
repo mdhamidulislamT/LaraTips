@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Scopes\ActiveScope;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
+
 
 
 class HomeController extends Controller
@@ -115,5 +117,21 @@ class HomeController extends Controller
         $product->delete(); */
 
         return "Deleted";
+    }
+
+
+
+    public function test()
+    {
+        $data = Product::where('id',1)->get();
+        return $data;
+        session(['key' => $data]);
+    }
+
+    public function testt()
+    {
+        return Session::get('key');
+
+
     }
 }
