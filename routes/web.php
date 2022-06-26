@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 
@@ -88,3 +89,4 @@ Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->gro
 Route::get('/test', [HomeController::class, 'test']);
 Route::get('/testt', [HomeController::class, 'testt']);
 
+Route::get('/relationship', [RelationshipController::class, 'index'])->name('relationship');
