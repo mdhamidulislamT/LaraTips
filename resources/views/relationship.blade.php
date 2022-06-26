@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Validation')
+@section('title', 'relationship')
 @push('style')
     <style>
         li {
@@ -28,8 +28,8 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row">Hamid</th>
+                    <td>01822004343</td>
                   </tr>
                 </tbody>
               </table>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
@@ -12,11 +13,11 @@ use App\Http\Controllers\TestController;
 
 
 
+Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
 //======= 1.Route Prefix 2.Route Name Prefixe =======//
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //=== Route Middleware ===//
     Route::get('/middleware1', [HomeController::class, 'profile'])
@@ -76,11 +77,17 @@ Route::get('/collection', [CollectionController::class, 'index'])->name('collect
 Route::get('/signupForm', [SignupController::class, 'signupForm'])->name('signup.form');
 Route::post('signup', [SignupController::class, 'signup'])->name('signup');
 
-
-
+Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->group(function () {
+    Route::get('/addToCart', 'index')->name('addToCart');
+    Route::post('/addToCart', 'addToCart')->name('addToCart');
+    Route::get('/fetchCart', 'fetchCart')->name('fetchCart');
+    Route::post('/updateCart', 'updateCart')->name('updateCart');
+    Route::get('/removeProduct', 'removeProduct')->name('removeProduct');
+    Route::get('/clearCart', 'clearCart')->name('clearCart');
+});
 
 Route::get('/test', [HomeController::class, 'test']);
 Route::get('/testt', [HomeController::class, 'testt']);
 
 //======= relationships =======//
-Route::get('/check', [RelationshipController::class, 'index']);
+Route::get('/relationship', [RelationshipController::class, 'index'])->name('relationship');
