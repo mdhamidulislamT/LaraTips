@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('post');
-            $table->enum('deleted',['Yes','No'])->default('No');
+        Schema::create('cars', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('mechanic_id');
+            $table->string('model');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('cars');
     }
 };
