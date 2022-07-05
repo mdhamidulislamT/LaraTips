@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('post');
-            $table->enum('deleted',['Yes','No'])->default('No');
+        Schema::create('category_post', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('category_id');
+            $table->bigInteger('post_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('category_post');
     }
 };

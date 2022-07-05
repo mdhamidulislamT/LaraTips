@@ -16,10 +16,20 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i < 25; $i++) { 
+        $commentArray = ["One", "Two", "Three", "Four",  "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty One", "Twenty Two", "Twenty Three", "Twenty Four", "Twenty Five", "Twenty Six", "Twenty Seven", "Twenty Eight", "Twenty Nine", "Thirteen"];
+        // 1
+        for ($i=0; $i <9; $i++) { 
             DB::table('comments')->insert([
-                'post_id' => $i,
-                'comment_description' => "Software engineering is a detailed study of engineering to the design, comments ".$i
+                'post_id' => ($i+1),
+                'comment' => "This is Test Comment ".$commentArray[$i]
+            ]);
+        }
+        // 2
+        for ($i=0; $i <30; $i++) { 
+            $random = rand(1,9);
+            DB::table('comments')->insert([
+                'post_id' => $random,
+                'comment' => "This is Test Comment ".$commentArray[$i]
             ]);
         }
     }

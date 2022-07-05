@@ -12,7 +12,7 @@ class Phone extends Model
 
     public function user()
     {
-        return $this->belongsTo(Phone::class);
+        return $this->belongsTo(User::class);
     }
 
 }

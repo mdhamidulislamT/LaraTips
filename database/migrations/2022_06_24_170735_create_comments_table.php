@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('post_id');
-            $table->string('comment_description');
+            $table->string('comment');
             $table->enum('deleted',['Yes','No'])->default('No');
             $table->timestamps();
         });
