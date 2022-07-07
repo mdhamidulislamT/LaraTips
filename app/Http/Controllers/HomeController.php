@@ -132,6 +132,5 @@ class HomeController extends Controller
     {
         return Session::get('key');
 
-
     }
 }
