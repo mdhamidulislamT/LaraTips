@@ -89,10 +89,3 @@ Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->gro
 Route::get('/test', [HomeController::class, 'test']);
 Route::get('/testt', [HomeController::class, 'testt']);
 
-Route::prefix('relationship')->name('relationship.')->controller(RelationshipController::class)->group(function () {
-    Route::get('/one-to-one',  'oneToOne')->name('one-to-one');
-    Route::get('/one-to-many',  'oneToMany')->name('one-to-many');
-    Route::get('/many-to-many',  'manyToMany')->name('many-to-many');
-    Route::get('/hasOneThrough',  'hasOneThrough')->name('hasOneThrough');
-    Route::get('/hasManyThrough',  'hasManyThrough')->name('hasManyThrough');
-});
