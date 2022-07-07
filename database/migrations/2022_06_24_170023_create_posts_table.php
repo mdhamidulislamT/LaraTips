@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id');
             $table->string('post');
             $table->enum('deleted',['Yes','No'])->default('No');
             $table->timestamps();

@@ -22,30 +22,36 @@
         {{-- Start Post has Categories --}}
         <br><br>
         <div class="col-md-12 text-center text-danger">
-            <h5>Mechanic<strong class="text-dark">-></strong>Car<strong class="text-dark">-></strong>Owner <span class="text-dark">(3 tables)</span></h5>
+            <h5>Country<strong class="text-dark">-></strong>User<strong class="text-dark">-></strong>Post <span class="text-dark">(3 tables)</span></h5>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <table class="table table-bordered" border="1">
                 <thead>
                     <tr>
-                        <th scope="col">SL.sdfdsfsdafasdfds</th>
-                        <th scope="col">Mechanic</th>
-                        <th scope="col">Car Model</th>
-                        <th scope="col">Car Owner</th>
+                        <th scope="col">SL.</th>
+                        <th scope="col">country</th>
+                        <th scope="col">Total Post</th>
+                        <th scope="col" width="50%">Posts</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @isset($mechanics)
+                    @isset($countries)
                         @php
                             $i = 1;
                         @endphp
-                        @forelse ($mechanics as $mechanic)
+                        @forelse ($countries as $country)
                             <tr>
                                 <tH>{{ $i++ }}</th>
-                                <td>{{ $mechanic->name }}</td>
-                                <td>{{ $mechanic->car->model }}</td>
-                                <td>{{ $mechanic->carOwner->name }}</td>
+                                <td>{{ $country->name }}</td>
+                                <td>{{ $country->posts->count() }}</td>
+                                <td>
+                                    @forelse ($country->posts as $post)
+                                        {{ $post->post }}
+                                    @empty
+                                        
+                                    @endforelse
+                                </td>
                             </tr>
                         @empty
                             <tr class="text-center">
@@ -53,19 +59,6 @@
                             </tr>
                         @endforelse
                     @endisset
-
-                    {{-- @forelse ($comments as $comment)
-                        <tr>
-                            <td>111</td>
-                            <td>{{ $comment->comment }}</td>
-                            <td>{{ $comment->post->post_title }}</td>
-                        </tr>
-                    @empty
-                        <tr class="text-center">
-                            <th scope="row" colspan="2" class="text-danger">No Data Available To Display</th>
-                        </tr>
-                    @endforelse --}}
-
                 </tbody>
             </table>
         </div>

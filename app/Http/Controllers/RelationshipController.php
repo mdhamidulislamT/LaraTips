@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Country;
 use App\Models\Mechanic;
 use App\Models\Phone;
 use App\Models\Post;
@@ -63,7 +64,8 @@ class RelationshipController extends Controller
     public function hasManyThrough()
     {
         session(['type' => "hasManyThrough"]);
-        $mechanics = []; 
-        return view('relationship.has-many-through', compact('mechanics'));
+        $countries = Country::with('posts')->get();
+        //$countries = []; 
+        return view('relationship.has-many-through', compact('countries'));
     }
 }

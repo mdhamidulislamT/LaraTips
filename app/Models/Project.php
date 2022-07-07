@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Project extends Model
 {
     use HasFactory;
 
-    public function posts()
+    public function deployments()
     {
-        return $this->hasManyThrough(Post::class, User::class);
+        return $this->hasManyThrough(Deployment::class, Environment::class);
     }
 }
