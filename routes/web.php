@@ -12,7 +12,6 @@ use App\Http\Controllers\TestController;
 //=== 15.04.2022 ===/
 
 
-
 Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
 //======= 1.Route Prefix 2.Route Name Prefixe =======//
@@ -42,8 +41,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 
-
-
 Route::name('admin.')->group(function () {
 
     Route::resource('validations', ValidationController::class);
@@ -59,7 +56,6 @@ Route::resource('test', TestController::class)->names([
     'store' => 'test.store',
     'show' => 'test.show',
 ]);
-
 
 
 //======= Model =======//
