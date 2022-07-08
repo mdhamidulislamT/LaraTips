@@ -61,7 +61,6 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('sale.addToCart') }}">Add To
                         Cart</a>
                 </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
