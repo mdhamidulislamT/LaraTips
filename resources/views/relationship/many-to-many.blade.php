@@ -16,7 +16,7 @@
         </div>
         {{-- Start One To Many --}}
         <div class="col-md-12 text-center {{ Session::get('type') == 'ManyToMany' ? 'bg-primary' : '' }}">
-            <h4>Many To Many</h4>
+            <h4>Many To Many <small class="text-white">(required a pivot table)</small></h4>
             <hr>
         </div>
         {{-- Start Post has Categories --}}

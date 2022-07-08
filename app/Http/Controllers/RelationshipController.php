@@ -20,16 +20,17 @@ class RelationshipController extends Controller
         //$user = User::find(1);
         //$phone = User::find(1)->phone;
         //$user = Phone::find(1)->user;
-        //$users = User::with('phone')->get();         
-        $users = User::all(); 
+        //$users = User::with('phone')->get();
+        $users = User::all();
         //$users = []; 
+        //return $users = Phone::with('user')->get(); //Inverse
         return view('relationship.one-to-one', compact('users'));
     }
 
     public function oneToMany()
     {
         session(['type' => "OneToMany"]);
-        
+
         //return $post = Comment::find(34)->post;
         //return $comment = Post::find(2)->comments;
 
@@ -38,6 +39,8 @@ class RelationshipController extends Controller
 
         //$posts = Post::all();
         $posts = Post::with('comments')->get();
+        ///return $comments = Comment::with('post')->get(); //Inverse
+        
         //$comments = Comment::all();
         //$posts = []; 
         return view('relationship.one-to-many', compact('posts'));
@@ -45,22 +48,27 @@ class RelationshipController extends Controller
 
     public function manyToMany()
     {
+        // (_required a pivot table_)
+        
         session(['type' => "ManyToMany"]);
+
         $posts = Post::with('categories')->get();
         $categories = Category::with('posts')->get();
-        //return $posts;
+
         //$posts = []; 
         //$categories = []; 
         return view('relationship.many-to-many', compact('posts', 'categories'));
     }
+
     public function hasOneThrough()
     {
         session(['type' => "hasOneThrough"]);
         //return $mechanics = Mechanic::all();
-         $mechanics = Mechanic::with('carOwner')->get();
+        $mechanics = Mechanic::with('carOwner')->get();
         //$mechanics = []; 
         return view('relationship.has-one-through', compact('mechanics'));
     }
+    
     public function hasManyThrough()
     {
         session(['type' => "hasManyThrough"]);

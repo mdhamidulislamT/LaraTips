@@ -18,6 +18,8 @@ class Mechanic extends Model
     // hasOneThrough
     public function carOwner()
     {
+        // Owner is  Final table
+        // Car is  intermediate table
         return $this->hasOneThrough(Owner::class, Car::class);
     }
 }

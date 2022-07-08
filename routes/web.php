@@ -42,8 +42,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 
-
-
 Route::name('admin.')->group(function () {
 
     Route::resource('validations', ValidationController::class);
@@ -86,8 +84,6 @@ Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->gro
     Route::get('/clearCart', 'clearCart')->name('clearCart');
 });
 
-Route::get('/test', [HomeController::class, 'test']);
-Route::get('/testt', [HomeController::class, 'testt']);
 
 Route::prefix('relationship')->name('relationship.')->controller(RelationshipController::class)->group(function () {
     Route::get('/one-to-one',  'oneToOne')->name('one-to-one');

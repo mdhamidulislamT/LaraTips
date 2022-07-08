@@ -12,6 +12,8 @@ class Country extends Model
     // hasManyThrough
     public function posts()
     {
+        // Post is  Final table
+        // User is  intermediate table
         return $this->hasManyThrough(Post::class, User::class);
     }
 }

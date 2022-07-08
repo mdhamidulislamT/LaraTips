@@ -9,6 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
+
+    // ManyToMany 
     public function posts()
     {
         return $this->belongsToMany(Post::class);

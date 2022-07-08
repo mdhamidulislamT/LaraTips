@@ -109,7 +109,6 @@ class HomeController extends Controller
 
     public function productDelete()
     {
-
         /* 
             delete model
         
@@ -117,20 +116,5 @@ class HomeController extends Controller
         $product->delete(); */
 
         return "Deleted";
-    }
-
-
-
-    public function test()
-    {
-        $data = Product::where('id',1)->get();
-        return $data;
-        session(['key' => $data]);
-    }
-
-    public function testt()
-    {
-        return Session::get('key');
-
     }
 }

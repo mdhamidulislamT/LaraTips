@@ -10,6 +10,8 @@ class Comment extends Model
     use HasFactory;
     protected $table = 'comments';
 
+
+    //Inverse Of (OneToMany)
     public function post()
     {
         return $this->belongsTo(Post::class);
