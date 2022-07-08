@@ -9,6 +9,7 @@ class Country extends Model
 {
     use HasFactory;
 
+    // hasManyThrough
     public function posts()
     {
         return $this->hasManyThrough(Post::class, User::class);

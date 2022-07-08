@@ -9,7 +9,7 @@ class Phone extends Model
 {
     use HasFactory;
 
-
+    // One to One
     public function user()
     {
         return $this->belongsTo(User::class);
