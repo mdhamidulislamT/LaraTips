@@ -82,6 +82,4 @@ Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->gro
     Route::get('/clearCart', 'clearCart')->name('clearCart');
 });
 
-Route::get('/test', [HomeController::class, 'test']);
-Route::get('/testt', [HomeController::class, 'testt']);
 

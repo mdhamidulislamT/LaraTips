@@ -118,19 +118,4 @@ class HomeController extends Controller
 
         return "Deleted";
     }
-
-
-
-    public function test()
-    {
-        $data = Product::where('id',1)->get();
-        return $data;
-        session(['key' => $data]);
-    }
-
-    public function testt()
-    {
-        return Session::get('key');
-
-    }
 }
