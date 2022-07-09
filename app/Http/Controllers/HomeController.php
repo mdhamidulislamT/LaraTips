@@ -118,4 +118,20 @@ class HomeController extends Controller
 
         return "Deleted";
     }
+
+
+    public function array()
+    {
+        $countries = [
+            "Bangladesh",
+            "Finland",
+            "Pakistan",
+            "Turkey",
+            "Norway",
+        ];
+        $country = "Turkey";
+        $result = in_array($country, $countries); // return true/false
+        //$result = array_search($country, $countries); // return index
+        return $result;
+    }
 }

@@ -83,3 +83,4 @@ Route::prefix('sale')->name('sale.')->controller(PurchaseController::class)->gro
 });
 
 
+Route::get('/array', [HomeController::class, 'array']);
