@@ -6,6 +6,7 @@ use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RelationshipController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 
@@ -51,10 +52,12 @@ Route::name('admin.')->group(function () {
 });
 
 
-Route::resource('test', TestController::class)->names([
-    'index' => 'test.index',
-    'store' => 'test.store',
-    'show' => 'test.show',
+Route::resource('crud', ResourceController::class)->names([
+    'index' => 'crud.index',
+    'store' => 'crud.store',
+    'show' => 'crud.show',
+    'update' => 'crud.update',
+    'destroy' => 'crud.destroy',
 ]);
 
 

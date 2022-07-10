@@ -55,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " tabindex="-1" aria-disabled="true">resource </a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('crud.index') }}">crud resource</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('sale.addToCart') }}">Add To
