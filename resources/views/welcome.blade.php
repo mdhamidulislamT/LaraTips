@@ -7,7 +7,7 @@
 
 
 <div>
-  <h1>Welcome To Home Page</h1>
+  <h1>Welcome To Home Page (From Master Branch)</h1>
 </div>
 
 @endsection
