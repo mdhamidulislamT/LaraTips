@@ -13,7 +13,7 @@
         <div class="col-md-12 text-center">
             <a class="text-success fs-2" href="{{ route('blogs') }}"> blogs </a> | 
             <a class="text-danger fs-2" href="{{ route('product') }}"> products </a> | 
-            <a class="text-primary fs-2" href="{{ route('collection') }}"> collection </a> | 
+            <a class="text-primary fs-2" href="{{ route('collection.index') }}"> collection </a> | 
 
         </div>
     </div>

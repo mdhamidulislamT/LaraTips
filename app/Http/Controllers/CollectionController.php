@@ -82,7 +82,7 @@ class CollectionController extends Controller
 
 
         // Collection Advance
-        
+
         //$collections = Collection::times(100000);
         $collections = LazyCollection::times(100000);
         foreach ($collections as $l) {
@@ -90,8 +90,15 @@ class CollectionController extends Controller
         }
 
         echo "Done";
-        
+    }
 
-       
+
+    public function chunk()
+    {
+        $products = Product::all();
+        $collection = collect($products);
+        $chunks = $collection->chunk(4);
+
+        return $chunks->all();
     }
 }
