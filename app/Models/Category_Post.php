@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category_Post extends Model
 {
     use HasFactory;
+
+    // pivot table
 }

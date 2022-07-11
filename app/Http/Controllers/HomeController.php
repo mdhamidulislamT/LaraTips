@@ -109,7 +109,6 @@ class HomeController extends Controller
 
     public function productDelete()
     {
-
         /* 
             delete model
         

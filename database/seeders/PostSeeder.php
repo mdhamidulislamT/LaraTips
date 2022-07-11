@@ -18,9 +18,17 @@ class PostSeeder extends Seeder
     public function run()
     {
         $postArray = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
-        for ($i = 0; $i <9; $i++) {
+        $postArray2 = ["Twenty"];
+        for ($i = 0; $i <=9; $i++) {
             DB::table('posts')->insert([
-                'post' => "This is Test Post - ".$postArray[$i]
+                'post' => "This is Test Post - ".$postArray[$i],
+                'user_id' => rand(1,15),
+            ]);
+        }
+        for ($i = 0; $i <=9; $i++) {
+            DB::table('posts')->insert([
+                'post' => "This is Test Post - ".$postArray2[0] .' '.$postArray[$i],
+                'user_id' => rand(1,15),
             ]);
         }
     }

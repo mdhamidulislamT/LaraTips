@@ -46,6 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    
+    // OneToOne
     public function phone()
     {
         return $this->hasOne(Phone::class);

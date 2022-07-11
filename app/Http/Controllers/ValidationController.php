@@ -13,6 +13,7 @@ class ValidationController extends Controller
         
     }
 
+    
     public function create()
     {
         return view('validation.form');
@@ -40,8 +41,20 @@ class ValidationController extends Controller
         //
     }
 
+<<<<<<< HEAD
     public function destroy($id)
     {
         //
+=======
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+     */
+     //
+>>>>>>> relationship
     }
 }

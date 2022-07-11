@@ -70,6 +70,41 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('sale.addToCart') }}">Add To
                         Cart</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Eloquent Relationships
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="{{ Session::get('type') == 'OneToOne' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.one-to-one') }}">#One To One</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="{{ Session::get('type') == 'OneToMany' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.one-to-many') }}">#One To Many</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="{{ Session::get('type') == 'ManyToMany' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.many-to-many') }}">#Many To Many</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="{{ Session::get('type') == 'hasOneThrough' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.hasOneThrough') }}">#hasOneThrough</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="{{ Session::get('type') == 'hasManyThrough' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.hasManyThrough') }}">#hasManyThrough</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

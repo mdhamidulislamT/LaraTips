@@ -10,14 +10,16 @@ class Mechanic extends Model
     use HasFactory;
 
     
-
     public function car()
     {
         return $this->hasOne(Car::class);
     }
     
+    // hasOneThrough
     public function carOwner()
     {
+        // Owner is  Final table
+        // Car is  intermediate table
         return $this->hasOneThrough(Owner::class, Car::class);
     }
 }
