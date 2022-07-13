@@ -52,6 +52,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('collection.chunk') }}">get chunk Data</a></li>
+                        <li><a class="dropdown-item" href="{{ route('collection.cache') }}">get cache Data</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

@@ -74,6 +74,7 @@ Route::controller(HomeController::class)->group(function () {
 Route::prefix('collection')->name('collection.')->group(function () {
     Route::get('/index', [CollectionController::class, 'index'])->name('index');
     Route::get('/chunk', [CollectionController::class, 'chunk'])->name('chunk');
+    Route::get('/cache', [CollectionController::class, 'cache'])->name('cache');
 });//======= End Collection =======//
 Route::get('/signupForm', [SignupController::class, 'signupForm'])->name('signup.form');
 Route::post('signup', [SignupController::class, 'signup'])->name('signup');

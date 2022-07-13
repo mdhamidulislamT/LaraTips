@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\LazyCollection;
 
 
@@ -97,8 +99,30 @@ class CollectionController extends Controller
     {
         $products = Product::all();
         $collection = collect($products);
-        $chunks = $collection->chunk(4);
 
-        return $chunks->all();
+        $chunks = $collection->chunk(4); // All Products divided by 4 [Example 23/4 = 5 Array]
+
+        //return $chunks->count();
+        return $chunks;
+
+
+
+        /*
+        $collection2 = collect($products);
+        return $collection2->random();
+        return $collection2->random(3);
+        */
+
+    }
+
+    public function cache()
+    {
+        //$posts = Post::take(4)->get();
+
+        $posts = Cache::remember('posts', 30, function(){
+            return Post::all();
+        });
+
+        return view('cache', compact('posts'));
     }
 }
