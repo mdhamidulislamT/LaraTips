@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         return view('about-us');
     }
-    
+
     public function viewAndBlade()
     {
         $data = [
@@ -53,11 +53,11 @@ class HomeController extends Controller
         // $blogs = Blog::whereIn('id', [1, 2, 3])->delete();
         return $blogs;
 
-        
 
 
 
-          /*$blog = new Blog();
+
+        /*$blog = new Blog();
         $blog->title = "This is third Blog title";
         $blog->save();
         return $blog->id ;*/
@@ -99,12 +99,11 @@ class HomeController extends Controller
         return $products;  
         */
 
-         /*
+        /*
             How to use Global scope 
         */
         $products = Product::price()->get();
-        return $products;  
-       
+        return $products;
     }
 
     public function productDelete()
@@ -116,5 +115,36 @@ class HomeController extends Controller
         $product->delete(); */
 
         return "Deleted";
+    }
+
+
+    //======= Response =======//
+    public function response(Request $request)
+    {
+        return response("this is test res", 200)->header('Content-Type', 'text/plain');
+    }
+
+    public function response2()
+    {
+        return redirect()->action([ResourceController::class, 'index']);
+    }
+
+    public function redirecToGoggle()
+    {
+        return redirect()->away('https://www.google.com');
+    }
+
+    public function Error404()
+    {
+        // abort(401);
+        // abort(402);
+        // abort(403);
+         abort(404);
+
+        // abort(419);
+        // abort(429);
+
+        // abort(500);
+        // abort(503);
     }
 }
