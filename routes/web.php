@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\OtherContolller;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\ResourceController;
@@ -69,12 +70,20 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/product-delete',  'productDelete')->name('product.delete');
 });
 
-//======= Response =======//
-Route::get('/response', [HomeController::class, 'response'])->name('response');
-Route::get('/response2', [HomeController::class, 'response2'])->name('response2');
-Route::get('/redirecToGoggle', [HomeController::class, 'redirecToGoggle'])->name('redirecToGoggle');
-//======= Error Handling =======//
-Route::get('/404', [HomeController::class, 'Error404'])->name('404');
+//======= Other =======//
+Route::controller(OtherContolller::class)->group(function () {
+    //======= Response =======//
+    Route::get('/response', 'response')->name('response');
+    Route::get('/response2', 'response2')->name('response2');
+    Route::get('/redirecToGoggle', 'redirecToGoggle')->name('redirecToGoggle');
+    //======= Error Handling =======//
+    Route::get('/404',  'Error404')->name('404');
+    //======= Encryption =======//
+    Route::get('/encryption',  'encryption')->name('encryption');
+    Route::get('/hashing',  'hashing')->name('hashing');
+
+});
+
 
 
 //======= Collection =======//

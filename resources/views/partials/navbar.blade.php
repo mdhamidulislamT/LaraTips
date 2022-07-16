@@ -65,6 +65,8 @@
                         <li><a class="dropdown-item" href="{{ route('response2') }}">response 2</a></li>
                         <li><a class="dropdown-item" href="{{ route('redirecToGoggle') }}">redirec To Goggle</a></li>
                         <li><a class="dropdown-item" href="{{ route('404') }}"> Custom Error Pages </a></li>
+                        <li><a class="dropdown-item" href="{{ route('encryption') }}"> Encryption </a></li>
+                        <li><a class="dropdown-item" href="{{ route('hashing') }}"> Hashing </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
