@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -119,6 +119,22 @@
                                 class="nav-link active" aria-current="page"
                                 href="{{ route('relationship.hasManyThrough') }}">#hasManyThrough</a></li>
                     </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('event.index') }}"> Event </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href="{{ route('queue.index') }}"> Queue </a>
                 </li>
             </ul>
         </div>

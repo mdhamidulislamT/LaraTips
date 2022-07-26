@@ -10,6 +10,7 @@ use App\Http\Controllers\RelationshipController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\EventController;
 
 //=== 15.04.2022 ===/
 
@@ -112,4 +113,14 @@ Route::prefix('relationship')->name('relationship.')->controller(RelationshipCon
     Route::get('/many-to-many',  'manyToMany')->name('many-to-many');
     Route::get('/hasOneThrough',  'hasOneThrough')->name('hasOneThrough');
     Route::get('/hasManyThrough',  'hasManyThrough')->name('hasManyThrough');
+});
+
+
+// Event
+Route::controller(EventController::class)->group(function () {
+    Route::get('/event',  'index')->name('event.index');
+    Route::post('/store',  'store')->name('event.store');
+
+    Route::get('/queue',  'queueIndex')->name('queue.index');
+    Route::post('/updateBigData',  'updateBigData')->name('queue.updateBigData');
 });

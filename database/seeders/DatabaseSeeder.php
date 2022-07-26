@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             CategoryPostSeeder::class,
             CountrySeeder::class,
             UserSeeder::class,
-            PhoneSeeder::class
+            PhoneSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }
