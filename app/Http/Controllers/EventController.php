@@ -52,7 +52,7 @@ class EventController extends Controller
         //====Get time difference to update 30,0000 blogs===//
 
         /* $blog1 = Blog::find(1);
-        $blog2 = Blog::find(30000);
+        $blog2 = Blog::find(60000);
         $time = $blog1->updated_at;
         $time2 = $blog2->updated_at;
         return $time->diff($time2)->format('%H:%I:%S'); */
