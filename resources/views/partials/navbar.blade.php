@@ -85,8 +85,18 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('sale.addToCart') }}">Add To
                         Cart</a>
                 </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Eloquent Relationships
                     </a>
@@ -120,16 +130,6 @@
                                 href="{{ route('relationship.hasManyThrough') }}">#hasManyThrough</a></li>
                     </ul>
                 </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('event.index') }}"> Event </a>
                 </li>

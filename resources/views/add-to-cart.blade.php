@@ -17,9 +17,10 @@
                     <div class="col-md-5">
                         <label for="warehouse">Warehouse</label>
                         <select class="form-select" id="warehouse" name="warehouse">
-                            <option selected>Select Warehouse</option>
-                            <option value="1">GEC Circle</option>
-                            <option value="2">Bahaddarhat</option>
+                            <option selected>Select Warehouse</option>                            
+                            @foreach ($warehouses as $warehouse)
+                                <option value="{{ $warehouse->id }}"> {{ $warehouse->name }} - {{  $warehouse->code }} </option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="col-md-5">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Warehouse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -11,7 +12,8 @@ class PurchaseController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('add-to-cart', compact('products'));
+        $warehouses = Warehouse::all();
+        return view('add-to-cart', compact('products','warehouses'));
     }
 
     public function addToCart(Request $request)
