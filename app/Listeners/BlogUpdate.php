@@ -33,7 +33,7 @@ class BlogUpdate implements ShouldQueue
 
          foreach ($blogs as $key => $blog) {
             $blogId = $blog->id;
-            $content = "Updated Content In July Month";
+            $content = "Updated Content In July Month 29";
             $affected = DB::table('blogs')
               ->where('id', $blogId)
               ->update(['content' => $content, 'updated_time' => date('Y-m-d H:i:s')]);

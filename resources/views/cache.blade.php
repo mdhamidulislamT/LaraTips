@@ -36,7 +36,7 @@
                         @forelse ($posts as $data)
                             <tr>
                                 <tH>{{ $i++ }}</th>
-                                <td>{{ $data->post }}
+                                {{--<td>{{ $data->post }}--}}
                                 </td>
                                 {{-- <td>
                                     @forelse ($data->categories as $category)

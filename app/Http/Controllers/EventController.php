@@ -33,8 +33,9 @@ class EventController extends Controller
 
             $message = $len . ",Blog Created Successfully!";
 
-            $data = ['title' => $len . "New Blog Created!", 'author' => "Md Hamidul Islam"];
-            /* event(new PostCreated($data)); // NotifyUser (Listener)
+            $data = ['title' => $len . "This Is Notifying From Laratips", 'author' => "Md Hamidul Islam"];
+            /* 
+            event(new PostCreated($data)); // NotifyUser (Listener)
             */
 
             DB::commit();
@@ -55,7 +56,9 @@ class EventController extends Controller
         $blog2 = Blog::find(60000);
         $time = $blog1->updated_at;
         $time2 = $blog2->updated_at;
-        return $time->diff($time2)->format('%H:%I:%S'); */
+        return $time->diff($time2)->format('%H:%I:%S'); 
+        return $time->diffInMinutes($time2);;
+        */
         $totalBlog = Blog::count();
         return view('event.queue', compact('totalBlog'));
     }

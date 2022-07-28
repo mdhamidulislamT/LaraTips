@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -112,7 +113,6 @@ class CollectionController extends Controller
         return $collection2->random();
         return $collection2->random(3);
         */
-
     }
 
     public function cache()
@@ -121,7 +121,13 @@ class CollectionController extends Controller
 
         $posts = Cache::remember('posts', 30, function(){
             return Post::all();
-        });
+        }); 
+        
+        return view('cache', compact('posts'));
+
+        /* $posts = Cache::remember('posts', 30, function () {
+            return Blog::take(500)->get();
+        }); */
 
         return view('cache', compact('posts'));
     }
