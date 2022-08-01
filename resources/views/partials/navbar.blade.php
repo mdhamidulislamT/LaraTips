@@ -136,6 +136,9 @@
                 <li class="nav-item ">
                     <a class="nav-link active" aria-current="page" href="{{ route('queue.index') }}"> Queue </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link active" aria-current="page" href="{{ route('datatable') }}"> Yajra Datatables </a>
+                </li>
             </ul>
         </div>
     </div>

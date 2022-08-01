@@ -124,3 +124,9 @@ Route::controller(EventController::class)->group(function () {
     Route::get('/queue',  'queueIndex')->name('queue.index');
     Route::post('/updateBigData',  'updateBigData')->name('queue.updateBigData');
 });
+
+//===  Yajra DataTables
+Route::get('/datatable', [CollectionController::class, 'postIndex'])->name('datatable');
+Route::get('/getPosts', [CollectionController::class, 'getPosts'])->name('getPosts');
+Route::post('/editPost', [CollectionController::class, 'editPost'])->name('editPost');
+Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('deletePost');

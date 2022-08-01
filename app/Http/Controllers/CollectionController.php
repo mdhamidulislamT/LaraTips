@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\LazyCollection;
+use DataTables;
 
 
 class CollectionController extends Controller
@@ -130,5 +131,38 @@ class CollectionController extends Controller
         }); */
 
         return view('cache', compact('posts'));
+    }
+
+    //====== Yajra Datatables ======//
+    public function postIndex()
+    {
+        return view('post.index');
+    }
+
+    public function getPosts(Request $request)
+    {
+        if ($request->ajax()) {
+            //$data = Blog::latest()->get();
+            $data = Blog::take(5000)->get();
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm" onclick="edit('.$row['id'].')">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm" onclick="delete('.$row['id'].')">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    }
+    public function editPost(Request $request)
+    {
+        $result = Blog::find($request->id);
+        return response()->json($result);
+    }
+
+    public function deletePost(Request $request)
+    {
+        $result = Blog::find($request->id);
+        return response()->json($result);
     }
 }
