@@ -38,7 +38,8 @@ class RelationshipController extends Controller
         return $post->comments; */
 
         //$posts = Post::all();
-        $posts = Post::with('comments')->get();
+        //$posts = Post::with('comments')->get();
+        $posts = Post::withCount('comments')->get(); //   total comments of a Post
         ///return $comments = Comment::with('post')->get(); //Inverse
         
         //$comments = Comment::all();

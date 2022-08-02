@@ -41,6 +41,11 @@
                                 {{-- <td>
                                     @forelse ($data->categories as $category)
                                         <small>{{ $category->name }}</small>
+                                <td width="25%">{{ $post->post }}</td>
+                                <td>
+                                    <small><span class="bg-info">Total Comments : {{ $post->comments_count}}, </span> </small>
+                                    @forelse ($post->comments as $comment)
+                                        <small>{{ $comment->comment }}</small>
                                         @if (!$loop->last)
                                             <strong>,</strong>
                                         @endif
