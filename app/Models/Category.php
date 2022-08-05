@@ -15,4 +15,10 @@ class Category extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+    // Many to many (Product)
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

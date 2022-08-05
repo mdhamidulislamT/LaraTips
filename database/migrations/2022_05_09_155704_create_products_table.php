@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->bigInteger('category_id')->nullable();
+            $table->bigInteger('warehouse_id')->nullable();
             $table->string('slug')->unique();
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('quantity');
-            $table->unsignedInteger('views');
+            $table->bigInteger('price');
+            $table->bigInteger('quantity');
+            $table->bigInteger('views');
             $table->boolean('is_active');
             $table->timestamps();
         });

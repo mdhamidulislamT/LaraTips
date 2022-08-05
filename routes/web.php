@@ -11,6 +11,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ShoppingCartController;
 
 //=== 15.04.2022 ===/
 
@@ -130,3 +131,7 @@ Route::get('/datatable', [CollectionController::class, 'postIndex'])->name('data
 Route::get('/getPosts', [CollectionController::class, 'getPosts'])->name('getPosts');
 Route::post('/editPost', [CollectionController::class, 'editPost'])->name('editPost');
 Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('deletePost');
+
+//===  Yajra DataTables
+Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shoppingcart');
+Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCategoryWiseProducts'])->name('shoppingcart.getCategoryWiseProducts');

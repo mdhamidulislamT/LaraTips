@@ -139,6 +139,9 @@
                 <li class="nav-item ">
                     <a class="nav-link active" aria-current="page" href="{{ route('datatable') }}"> Yajra Datatables </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('shoppingcart') }}">ShoppingCart(pivot table)</a>
+                </li>
             </ul>
         </div>
     </div>

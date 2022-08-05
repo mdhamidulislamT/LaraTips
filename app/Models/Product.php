@@ -43,6 +43,12 @@ class Product extends Model
     {
         static::addGlobalScope(new ActiveScope);
     }
+
+    // Many to many (Category)
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
     
 
 }
