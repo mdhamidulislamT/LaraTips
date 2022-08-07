@@ -26,7 +26,8 @@
                     </div> --}}
                     <div class="col-md-4 my-3">
                         <label for="warehouse">Category</label>
-                        <select class="form-select" id="category" name="category" onchange="getCategoryWiseProducts(this.value)">
+                        <select class="form-select" id="category" name="category"
+                            onchange="getCategoryWiseProducts(this.value)">
                             <option selected>Select Category</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}"> {{ $category->name }} </option>
@@ -73,6 +74,17 @@
 @section('javascripts')
 
     <script>
+        $(function() {
+            $("#category").select2({
+                placeholder: "Select a category",
+                allowClear: true
+            });
+            $("#product").select2({
+                placeholder: "Select a product",
+                allowClear: true
+            });
+        });
+
         fetchCart();
 
         $('#warehouse').change(function() {
@@ -90,7 +102,8 @@
                 success: function(result) {
                     $('#product').empty().append('<option selected>Select Product</option>');
                     result.map(function(product) {
-                        $("#product").append('<option value='+product.id+'>' + product.title + '</option>');
+                        $("#product").append('<option value=' + product.id + '>' + product.title +
+                            '</option>');
                     })
                 },
                 beforeSend: function() {
@@ -107,8 +120,8 @@
 
         function addToCart(productId) {
             //var warehouseId = $('#warehouse').val();
-            var warehouses= [1,2];
-            var warehouseId =  warehouses[Math.floor(Math.random()*warehouses.length)];
+            var warehouses = [1, 2];
+            var warehouseId = warehouses[Math.floor(Math.random() * warehouses.length)];
             var _token = $('input[name="_token"]').val();
             var fd = new FormData();
             fd.append('warehouse_id', warehouseId);

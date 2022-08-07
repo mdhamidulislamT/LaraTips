@@ -14,16 +14,17 @@
             <form id="productForm" method="POST">
                 @csrf
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 my-3">
                         <label for="warehouse">Warehouse</label>
                         <select class="form-select" id="warehouse" name="warehouse">
-                            <option selected>Select Warehouse</option>                            
+                            <option selected>Select Warehouse</option>
                             @foreach ($warehouses as $warehouse)
-                                <option value="{{ $warehouse->id }}"> {{ $warehouse->name }} - {{  $warehouse->code }} </option>
+                                <option value="{{ $warehouse->id }}"> {{ $warehouse->name }} - {{ $warehouse->code }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 my-3">
                         <label for="products">Products</label>
                         <select class="form-select" id="products" name="products" onchange="addToCart(this.value)">
                             <option selected>Select Product</option>
@@ -63,6 +64,17 @@
 @section('javascripts')
 
     <script>
+        $(function() {
+            $("#warehouse").select2({
+                placeholder: "Select a warehouse",
+                allowClear: true
+            });
+            $("#products").select2({
+                placeholder: "Select a product",
+                allowClear: true
+            });
+        });
+
         fetchCart();
 
         $('#warehouse').change(function() {
