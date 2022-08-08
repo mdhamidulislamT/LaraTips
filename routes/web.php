@@ -135,3 +135,7 @@ Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('d
 //===  Yajra DataTables
 Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCategoryWiseProducts'])->name('shoppingcart.getCategoryWiseProducts');
+
+Route::get('/greeting', function () {
+    return "Hello World. I'm from shoppingCart branch";
+});
