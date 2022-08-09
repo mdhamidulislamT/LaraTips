@@ -136,3 +136,8 @@ Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('d
 Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCategoryWiseProducts'])->name('shoppingcart.getCategoryWiseProducts');
 
+
+ 
+Route::get('/welcomging-greeting', function () {
+    return 'Assalamu alaikum from shoppingCart. more test needed to learn';
+});
