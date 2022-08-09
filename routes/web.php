@@ -139,3 +139,7 @@ Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCateg
 Route::get('/greeting', function () {
     return 'Hello World from master branch.please check!';
 });
+ 
+Route::get('/welcomging-greeting', function () {
+    return 'Assalamu alaikum from shoppingCart. more test needed to learn';
+});
