@@ -12,6 +12,7 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ShoppingCartController;
+use App\Http\Controllers\StripePaymentController;
 
 //=== 15.04.2022 ===/
 
@@ -139,3 +140,7 @@ Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('d
 Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCategoryWiseProducts'])->name('shoppingcart.getCategoryWiseProducts');
 Route::get('/from-relationship', [RelationshipController::class, 'fromFelationship']);
+
+//===  Stripe Payment Gateway
+Route::get('stripe', [StripePaymentController::class, 'stripe'])->name('stripe');
+Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');

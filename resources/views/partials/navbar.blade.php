@@ -142,6 +142,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('shoppingcart') }}">ShoppingCart(pivot table)</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('stripe') }}">Stripe Gateway</a>
+                </li>
             </ul>
         </div>
     </div>
