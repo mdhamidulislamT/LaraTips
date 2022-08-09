@@ -126,6 +126,9 @@ Route::controller(EventController::class)->group(function () {
     Route::post('/updateBigData',  'updateBigData')->name('queue.updateBigData');
 });
 
+
+Route::get('/this-from-shoppingCart', [ShoppingCartController::class, 'thisFromShoppingCart']);
+
 //===  Yajra DataTables
 Route::get('/datatable', [CollectionController::class, 'postIndex'])->name('datatable');
 Route::get('/getPosts', [CollectionController::class, 'getPosts'])->name('getPosts');
