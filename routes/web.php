@@ -11,6 +11,8 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\StripePaymentController;
 
@@ -144,3 +146,11 @@ Route::get('/from-relationship', [RelationshipController::class, 'fromFelationsh
 //===  Stripe Payment Gateway
 Route::get('stripe', [StripePaymentController::class, 'stripe'])->name('stripe');
 Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+
+//===  File Storage
+Route::get('file-view', [PhotoController::class, 'index'])->name('fileView');
+Route::resource('photos', PhotoController::class)->names([
+    'index' => 'photos.index',
+    'store' => 'photos.store',
+]);
+

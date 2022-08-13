@@ -145,6 +145,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('stripe') }}">Stripe Gateway</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('photos.index') }}">File Storage</a>
+                </li>
             </ul>
         </div>
     </div>
