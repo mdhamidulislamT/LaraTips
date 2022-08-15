@@ -75,6 +75,11 @@ class ResourceController extends Controller
         return "show";
     }
 
+    public function show2(Product $product) //  Model Binding
+    {
+        return view('crud.edit', ['product' => $product]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

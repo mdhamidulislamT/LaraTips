@@ -66,6 +66,7 @@ Route::resource('crud', ResourceController::class)->names([
     'update' => 'crud.update',
     'destroy' => 'crud.destroy',
 ]);
+Route::get('crud/show2/{product}', [ResourceController::class, 'show2'])->name('crud.show2');
 
 
 //======= Model =======//
@@ -156,6 +157,8 @@ Route::resource('photos', PhotoController::class)->names([
 ]);
 
 
-Route::get('importExportView', [ExcelController::class, 'importExportView'])->name('importExportView');
+//Route::get('importExportView', [ExcelController::class, 'importExportView'])->name('importExportView');
+Route::view('/importExportView', 'import',  ['name' => 'Taylor'])->name('importExportView'); // shortcut
 Route::get('export', [ExcelController::class, 'export'])->name('export');
 Route::post('import', [ExcelController::class, 'import'])->name('import');
+

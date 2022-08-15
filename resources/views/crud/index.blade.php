@@ -44,11 +44,13 @@
                             <td>
                                 <a class="btn btn-success d-inline" href="{{ route('crud.edit', $product->id) }}"
                                     role="button">Edit</a>
-                                <form class="d-inline" action="{{ route('crud.destroy', $product->id) }}" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+                                    <form class="d-inline" action="{{ route('crud.destroy', $product->id) }}" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                    <a class="btn btn-success d-inline" href="{{ route('crud.show2', $product->id) }}"
+                                        role="button">Show 2</a>
                             </td>
                         </tr>
                     @empty
