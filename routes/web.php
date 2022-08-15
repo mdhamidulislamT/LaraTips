@@ -11,6 +11,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ShoppingCartController;
@@ -154,3 +155,7 @@ Route::resource('photos', PhotoController::class)->names([
     'store' => 'photos.store',
 ]);
 
+
+Route::get('importExportView', [ExcelController::class, 'importExportView'])->name('importExportView');
+Route::get('export', [ExcelController::class, 'export'])->name('export');
+Route::post('import', [ExcelController::class, 'import'])->name('import');

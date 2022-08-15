@@ -148,6 +148,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('photos.index') }}">File Storage</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('importExportView') }}">import-Export-View</a>
+                </li>
             </ul>
         </div>
     </div>
