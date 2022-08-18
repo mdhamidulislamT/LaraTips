@@ -141,7 +141,7 @@ Route::get('/getPosts', [CollectionController::class, 'getPosts'])->name('getPos
 Route::post('/editPost', [CollectionController::class, 'editPost'])->name('editPost');
 Route::post('/deletePost', [CollectionController::class, 'deletePost'])->name('deletePost');
 
-//===  Yajra DataTables
+//===  shoppingcart
 Route::get('/shoppingcart', [ShoppingCartController::class, 'index'])->name('shoppingcart');
 Route::get('/getCategoryWiseProducts', [ShoppingCartController::class, 'getCategoryWiseProducts'])->name('shoppingcart.getCategoryWiseProducts');
 Route::get('/from-relationship', [RelationshipController::class, 'fromFelationship']);
