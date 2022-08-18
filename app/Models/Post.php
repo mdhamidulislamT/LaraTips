@@ -13,8 +13,8 @@ class Post extends Model
     // OneToMany
     public function comments()
     {
-        return $this->hasMany(Comment::class);
-        //return $this->hasMany(Comment::class)->where('deleted', 'No');
+        //return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->where('deleted', 'No');
     }
     
 

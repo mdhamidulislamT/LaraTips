@@ -14,8 +14,8 @@ class Comment extends Model
     //Inverse Of (OneToMany)
     public function post()
     {
-        return $this->belongsTo(Post::class);
-        //return $this->belongsTo(Post::class)->where('deleted', 'No');
+        //return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class)->where('deleted', 'No');
     }
 
 }

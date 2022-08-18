@@ -120,7 +120,8 @@ Route::prefix('relationship')->name('relationship.')->controller(RelationshipCon
     Route::get('/hasOneThrough',  'hasOneThrough')->name('hasOneThrough');
     Route::get('/hasManyThrough',  'hasManyThrough')->name('hasManyThrough');
 });
-
+// test with where deleted = 'No'
+Route::get('/testData', [RelationshipController::class, 'testData'])->name('relationship.testData');
 
 // Event
 Route::controller(EventController::class)->group(function () {

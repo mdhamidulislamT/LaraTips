@@ -128,6 +128,9 @@
                         <li class="{{ Session::get('type') == 'hasManyThrough' ? 'bg-primary' : '' }}"><a
                                 class="nav-link active" aria-current="page"
                                 href="{{ route('relationship.hasManyThrough') }}">#hasManyThrough</a></li>
+                        <li class="{{ Session::get('type') == 'hasManyThrough' ? 'bg-primary' : '' }}"><a
+                                class="nav-link active" aria-current="page"
+                                href="{{ route('relationship.testData') }}">#With <span class="bg-warning">where deleted ='No'</span> condition</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

@@ -13,6 +13,23 @@ use Illuminate\Http\Request;
 
 class RelationshipController extends Controller
 {
+    public function testData()
+    {
+        //=====1=====//
+        // return $comment = Post::find(2)->comments; // where deleted = 'No' [comments table]
+        // return $post = Comment::find(2)->post; // where deleted = 'No' [posts table]
+        //=====2=====//
+        //return $posts = Post::with('comments')->where('deleted', 'No')->get(); // where deleted = 'No' [In posts table]
+        //return $comments = Comment::with('post')->where('deleted', 'No')->get(); // where deleted = 'No' [In comments table]
+        //=====3=====//
+        // where deleted = 'No' [In posts table & comments table]
+         return $comments = Post::where('deleted', 'No')
+        ->with(['comments' => function($query){
+                    $query->where('deleted', '=', 'No');
+                }
+            ])
+            ->get();
+    }
     public function oneToOne()
     {
         session(['type' => "OneToOne"]);
@@ -41,7 +58,7 @@ class RelationshipController extends Controller
         //$posts = Post::with('comments')->get();
         $posts = Post::withCount('comments')->get(); //   total comments of a Post
         ///return $comments = Comment::with('post')->get(); //Inverse
-        
+
         //$comments = Comment::all();
         //$posts = []; 
         return view('relationship.one-to-many', compact('posts'));
@@ -50,7 +67,7 @@ class RelationshipController extends Controller
     public function manyToMany()
     {
         // (_required a pivot table_)
-        
+
         session(['type' => "ManyToMany"]);
 
         $posts = Post::with('categories')->get();
@@ -69,7 +86,7 @@ class RelationshipController extends Controller
         //$mechanics = []; 
         return view('relationship.has-one-through', compact('mechanics'));
     }
-    
+
     public function hasManyThrough()
     {
         session(['type' => "hasManyThrough"]);
