@@ -163,3 +163,5 @@ Route::view('/importExportView', 'import',  ['name' => 'Taylor'])->name('importE
 Route::get('export', [ExcelController::class, 'export'])->name('export');
 Route::post('import', [ExcelController::class, 'import'])->name('import');
 
+// Observers
+Route::get('observers', [TestController::class, 'create'])->name('observers');

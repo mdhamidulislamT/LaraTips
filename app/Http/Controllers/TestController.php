@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -23,7 +26,21 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $data['name'] = 'Monirul Islam';
+            $data['country_id'] = 3;
+            $data['email'] = 'Monirullislam@gmail.com';
+            $data['password'] = Hash::make('12345678');
+            $data['is_admin'] = 1;
+            $user = User::create($data);
+            DB::commit();
+        } catch (Throwable $e) {
+            report($e);
+            DB::rollBack();
+        }
+        return redirect()->back();
     }
 
     /**

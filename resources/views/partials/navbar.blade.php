@@ -154,6 +154,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('importExportView') }}">import-Export-View</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('observers') }}">Observers</a>
+                </li>
             </ul>
         </div>
     </div>
