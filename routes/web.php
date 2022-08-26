@@ -156,6 +156,7 @@ Route::resource('photos', PhotoController::class)->names([
     'index' => 'photos.index',
     'store' => 'photos.store',
 ]);
+Route::post('photo-store2', [PhotoController::class, 'store2'])->name('photo.store2');
 
 
 //Route::get('importExportView', [ExcelController::class, 'importExportView'])->name('importExportView');

@@ -2,17 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\ImageTrait;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    use ImageTrait;
+    //========== Image Upload using Trait ==========//
+
+
+    public function store2(Request $request)
+    {
+        $path = $this->manageUpload($request, 'public/avatars');
+
+        $photo = new Photo();
+        $photo->name = $path;
+        $result = $photo->save();
+        if ($result) {
+            return Response()->json([
+                "success" => true,
+                "file" => $path
+            ]);
+        }else{
+            return Response()->json([
+                "success" => false,
+                "file" => ''
+          ]);
+        }
+
+    }
+
     public function index()
     {
         $photos = Photo::all();
@@ -44,10 +65,10 @@ class PhotoController extends Controller
             'file' => 'required|mimes:png,jpg,jpeg,csv,txt,xlx,xls,pdf|max:2048'
           ]);
 
-          if ($files = $request->file('file')) {
+          if ($files = $request->file('photo')) {
              
             //store file into document folder
-            $file = $request->file->store('public/photos');
+            $file = $request->photo->store('public/photos');
  
             //store your file into database
             $photo = new Photo();
