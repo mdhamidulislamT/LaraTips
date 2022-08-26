@@ -16,6 +16,7 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\TwilioSMSController;
 
 //=== 15.04.2022 ===/
 
@@ -166,3 +167,5 @@ Route::post('import', [ExcelController::class, 'import'])->name('import');
 
 // Observers
 Route::get('observers', [TestController::class, 'create'])->name('observers');
+// Twilio SMS
+Route::get('sendSMS', [TwilioSMSController::class, 'index'])->name('sendSMS');

@@ -157,6 +157,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('observers') }}">Observers</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active bg-primary" aria-current="page" href="{{ route('sendSMS') }}">Send SMS using Twilio</a>
+                </li>
             </ul>
         </div>
     </div>
