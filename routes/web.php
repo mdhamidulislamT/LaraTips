@@ -135,6 +135,7 @@ Route::controller(EventController::class)->group(function () {
 
 
 Route::get('/this-from-shoppingCart', [ShoppingCartController::class, 'thisFromShoppingCart']);
+Route::get('/read-json-file', [TestController::class, 'readJsonFile']);
 
 //===  Yajra DataTables
 Route::get('/datatable', [CollectionController::class, 'postIndex'])->name('datatable');

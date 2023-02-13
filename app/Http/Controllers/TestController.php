@@ -6,9 +6,20 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use App\Models\Country;
 
 class TestController extends Controller
 {
+
+    public function readJsonFile()
+    {
+        $countryList = Country::getCountryList();
+        dd($countryList);
+        foreach ($countryList as $key => $country) {
+            echo $key."===".$country."<br>";
+        }
+        return "final";
+    }
     /**
      * Display a listing of the resource.
      *
